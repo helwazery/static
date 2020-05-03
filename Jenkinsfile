@@ -8,12 +8,11 @@ pipeline {
                       s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'index.html', bucket:'halaelwazery-udacity-project3')
                   }
               }
+           }
         }
-     }
-     
         stage('Lint HTML') {
               steps {
                   sh 'tidy -q -e *.html'
               }
-         }
+        }
 }
